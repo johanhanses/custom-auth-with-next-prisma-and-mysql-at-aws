@@ -15,7 +15,5 @@ export default async function signOut(req, res) {
     })
   )
 
-  // res.setHeader('set-cookie', 'mycookie=; max-age=0');
-
   res.status(205).json({ message: "trying to logout" })
 }

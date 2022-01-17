@@ -16,7 +16,8 @@ export default function Cv() {
 
     if (!response.error) {
       // setIsLoading(false)
-      router.push("/")
+      // router.push("/")
+      router.reload("/")
     } else {
       console.log("Gick inte att logga ut")
       // setError("Wrong username or password")

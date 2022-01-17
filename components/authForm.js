@@ -15,7 +15,7 @@ export default function AuthForm() {
     setIsLoading(true)
 
     let response = await fetcher("/signin", { username, password })
-    console.log(response)
+
     if (!response.error) {
       setIsLoading(false)
       router.push("/cv")

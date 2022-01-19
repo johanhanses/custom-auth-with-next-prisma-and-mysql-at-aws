@@ -14,15 +14,15 @@ export default function Cv() {
 
     let response = await fetcher("/signout")
 
-    // if (!response.error) {
-    // setIsLoading(false)
-    router.push("/")
-    // router.reload("/")
-    // } else {
-    // console.log("Gick inte att logga ut")
-    // setError("Wrong username or password")
-    // setIsLoading(false)
-    // }
+    if (!response.error) {
+      // setIsLoading(false)
+      router.push("/")
+      // router.reload("/")
+    } else {
+      console.log("Gick inte att logga ut")
+      // setError("Something went wrong")
+      // setIsLoading(false)
+    }
   }
 
   return (

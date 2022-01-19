@@ -34,7 +34,7 @@ export default async function signIn(req, res) {
       })
     )
 
-    res.status(200).json({ user: user.username, ok: true })
+    res.status(200).json({ user: user.username, ok: true, error: null })
   } else {
     res.status(401)
     res.json({

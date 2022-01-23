@@ -11,26 +11,27 @@ export default function AuthForm() {
   const router = useRouter()
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setIsLoading(true)
-
-    await fetcher("/signin", { username, password })
-    setIsLoading(false)
-    router.push("/cv")
     // event.preventDefault()
     // setIsLoading(true)
 
-    // let response = await fetcher("/signin", { username, password })
+    // await fetcher("/signin", { username, password })
+    // setIsLoading(false)
+    // router.push("/cv")
 
-    // console.log(response)
+    event.preventDefault()
+    setIsLoading(true)
 
-    // if (response.ok) {
-    //   setIsLoading(false)
-    //   router.push(`${window.location.origin}/cv`)
-    // } else {
-    //   setError("Wrong username or password")
-    //   setIsLoading(false)
-    // }
+    let response = await fetcher("/signin", { username, password })
+
+    console.log(response)
+
+    if (response.ok) {
+      setIsLoading(false)
+      router.push(`/`)
+    } else {
+      setError("Wrong username or password")
+      setIsLoading(false)
+    }
   }
 
   return (

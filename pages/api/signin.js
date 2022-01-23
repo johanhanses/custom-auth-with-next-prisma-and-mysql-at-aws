@@ -28,7 +28,7 @@ export default async function signIn(req, res) {
       cookie.serialize("NINJA_KAKAN", token, {
         httpOnly: true,
         maxAge: 60 * 60,
-        path: "/cv",
+        path: "/",
         sameSite: "lax",
         secure: process.env.NODE_ENV === "production"
       })

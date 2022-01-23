@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Tjena</h1>
+        <h1>Tjenare</h1>
 
         <Link href="/cv">
           <a>cv</a>

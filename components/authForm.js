@@ -16,7 +16,7 @@ export default function AuthForm() {
 
     await fetcher("/signin", { username, password })
     setIsLoading(false)
-    router.push("/")
+    router.push("/cv")
     // event.preventDefault()
     // setIsLoading(true)
 

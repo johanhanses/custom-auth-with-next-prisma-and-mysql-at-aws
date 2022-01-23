@@ -14,17 +14,23 @@ export default function AuthForm() {
     event.preventDefault()
     setIsLoading(true)
 
-    let response = await fetcher("/signin", { username, password })
+    await fetcher("/signin", { username, password })
+    setIsLoading(false)
+    router.push("/")
+    // event.preventDefault()
+    // setIsLoading(true)
 
-    console.log(response)
+    // let response = await fetcher("/signin", { username, password })
 
-    if (response.ok) {
-      setIsLoading(false)
-      router.push(`${window.location.origin}/cv`)
-    } else {
-      setError("Wrong username or password")
-      setIsLoading(false)
-    }
+    // console.log(response)
+
+    // if (response.ok) {
+    //   setIsLoading(false)
+    //   router.push(`${window.location.origin}/cv`)
+    // } else {
+    //   setError("Wrong username or password")
+    //   setIsLoading(false)
+    // }
   }
 
   return (

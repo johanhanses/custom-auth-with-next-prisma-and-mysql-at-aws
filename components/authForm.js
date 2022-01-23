@@ -15,10 +15,12 @@ export default function AuthForm() {
     setIsLoading(true)
 
     let response = await fetcher("/signin", { username, password })
+
     console.log(response)
-    if (!response.error) {
+
+    if (response.ok) {
       setIsLoading(false)
-      router.push("/cv")
+      router.push(`${window.location.origin}/cv`)
     } else {
       setError("Wrong username or password")
       setIsLoading(false)
